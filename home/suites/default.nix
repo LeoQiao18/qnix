@@ -1,6 +1,6 @@
-{ core, apps, desktop, editors, dev, shell , ... }:
+{ core, apps, desktop, editors, dev, shell, ... }:
 {
-  fullGnome = [ 
+  fullGnome = [
     core
 
     apps.chat
@@ -9,7 +9,6 @@
     apps.term
     apps.browser
 
-    desktop.xrandr
     desktop.gnome
     desktop.wallpaper
 
