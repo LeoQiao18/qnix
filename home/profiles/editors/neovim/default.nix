@@ -1,42 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
-  customPlugins = pkgs.callPackage ./custom-plugins.nix {
-    inherit (pkgs.vimUtils) buildVimPlugin;
-  };
-  plugins = pkgs.vimPlugins // customPlugins;
-  myPlugins = with plugins; [
-      vim-airline
-      vim-unimpaired
-      vim-vinegar
-      vim-easymotion
-      vim-tmux-navigator
-      vim-surround
-      nerdcommenter
-      gruvbox
-      fzf-vim
-      fzf-hoogle
-      coc-nvim
-      coc-pyright
-      coc-highlight
-      coc-pairs
-      coc-spell-checker
-      vim-nix
-      vim-tmux
-      vim-css-color
-      vim-which-key
-      vim-gtfo
-      vim-ripgrep
-      fzf-hoogle
-      dracula-vim
-    ];
+  myPlugins = builtins.attrValues (lib.our.rakeLeaves ./plugins);
+  myPlugins' = builtins.map (p: import p { inherit pkgs; }) myPlugins;
   cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
   baseConfig = builtins.readFile ./base.vim;
-  pluginsConfig = builtins.readFile ./plugins.vim;
-  cocConfig = builtins.readFile ./coc.vim;
   keysConfig = builtins.readFile ./keys.vim;
-  vimConfig = baseConfig + pluginsConfig + cocConfig + keysConfig;
+  cocConfig = builtins.readFile ./coc.vim;
+  pluginsConfig = builtins.readFile ./plugins.vim;
+  vimConfig = baseConfig + keysConfig + cocConfig + pluginsConfig;
+  luaConfig = builtins.readFile ./base.lua;
 in
 {
   programs.neovim = {
@@ -46,8 +20,13 @@ in
     vimdiffAlias = true;
     withNodeJs = true;
     withPython3 = true;
-    plugins = myPlugins;
-    extraConfig = vimConfig;
+    plugins = myPlugins';
+    extraConfig = ''
+      ${vimConfig}
+      lua << EOF
+      ${luaConfig}
+      EOF
+    '';
   };
 
   xdg.configFile = {

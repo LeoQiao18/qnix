@@ -1,5 +1,5 @@
 syntax enable
-colorscheme gruvbox
+colorscheme tokyonight
 set expandtab
 set shiftwidth=2
 set ignorecase
