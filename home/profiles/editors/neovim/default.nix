@@ -1,9 +1,8 @@
 { config, pkgs, lib, ... }:
 
 let
-  myPlugins = builtins.attrValues (lib.our.rakeLeaves ./plugins);
-  myPlugins' = builtins.map (p: import p { inherit pkgs; }) myPlugins;
-  cocSettings = builtins.toJSON (import ./coc-settings.nix);
+  myPlugins = import ./plugins { inherit pkgs lib; };
+  # cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
   baseConfig = builtins.readFile ./base.vim;
   keysConfig = builtins.readFile ./keys.vim;
@@ -20,7 +19,7 @@ in
     vimdiffAlias = true;
     withNodeJs = true;
     withPython3 = true;
-    plugins = myPlugins';
+    plugins = myPlugins;
     extraConfig = ''
       ${vimConfig}
       lua << EOF
@@ -29,7 +28,7 @@ in
     '';
   };
 
-  xdg.configFile = {
-    "nvim/coc-settings.json".text = cocSettings;
-  };
+  # xdg.configFile = {
+  #   "nvim/coc-settings.json".text = cocSettings;
+  # };
 }

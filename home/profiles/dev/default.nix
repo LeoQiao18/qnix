@@ -1,11 +1,7 @@
+{ lib, ... }:
+let
+  lang = builtins.attrValues (lib.our.rakeLeaves ./lang);
+in
 {
-  imports = [
-    ./cc.nix
-    ./go.nix
-    ./haskell.nix
-    ./nix.nix
-    ./ocaml.nix
-    ./python.nix
-    ./shell.nix
-  ];
+  imports = lang;
 }

@@ -3,6 +3,6 @@ colorscheme tokyonight
 set expandtab
 set shiftwidth=2
 set ignorecase
-set number
+set relativenumber
 nnoremap <C-p> :Files<Cr>
-set timeoutlen=500
+let g:mapleader = "\<Space>"
