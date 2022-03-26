@@ -19,5 +19,6 @@
     shell.direnv
     shell.git
     shell.zsh
+    shell.tmux
   ];
 }

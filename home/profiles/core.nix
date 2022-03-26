@@ -28,6 +28,8 @@
     fd
     gawk
     killall
+    pavucontrol
+    psmisc
     ripgrep
     tldr
     tree

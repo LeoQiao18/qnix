@@ -13,6 +13,8 @@
     udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
   };
 
+  services.gnome.gnome-remote-desktop.enable = false;
+
   environment.systemPackages = with pkgs; [
     gnome3.adwaita-icon-theme
   ];

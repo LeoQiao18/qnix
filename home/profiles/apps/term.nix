@@ -33,6 +33,13 @@
           };
         };
       };
+      key_bindings = [
+        {
+          key = "Return";
+          mods = "Control|Shift";
+          action = "SpawnNewInstance";
+        }
+      ];
     };
   };
 }

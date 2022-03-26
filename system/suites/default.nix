@@ -9,5 +9,6 @@
     hardware.audio
 
     x.gnome
+    x.xkbOptions
   ];
 }

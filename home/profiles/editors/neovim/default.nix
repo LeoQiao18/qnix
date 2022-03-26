@@ -4,12 +4,10 @@ let
   myPlugins = import ./plugins { inherit pkgs lib; };
   # cocSettings = builtins.toJSON (import ./coc-settings.nix);
 
-  baseConfig = builtins.readFile ./base.vim;
-  keysConfig = builtins.readFile ./keys.vim;
-  cocConfig = builtins.readFile ./coc.vim;
-  pluginsConfig = builtins.readFile ./plugins.vim;
-  vimConfig = baseConfig + keysConfig + cocConfig + pluginsConfig;
+  vimConfig = builtins.readFile ./base.vim;
   luaConfig = builtins.readFile ./base.lua;
+
+  keysConfig = builtins.readFile ./keys.lua;
 in
 {
   programs.neovim = {
@@ -24,6 +22,7 @@ in
       ${vimConfig}
       lua << EOF
       ${luaConfig}
+      ${keysConfig}
       EOF
     '';
   };

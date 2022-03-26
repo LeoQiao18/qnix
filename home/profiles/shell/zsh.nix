@@ -1,4 +1,5 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
+with lib;
 {
   home.packages = with pkgs; [
     any-nix-shell
@@ -7,7 +8,11 @@
     enable = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
-    shellAliases = {};
+    shellAliases = {
+      
+    } // mkIf config.programs.tmux.enable {
+      mux = "tmuxinator";
+    };
     history = {
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";

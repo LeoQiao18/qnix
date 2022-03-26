@@ -34,5 +34,6 @@ in
     orchis-theme
     tela-icon-theme
     gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-dock
   ];
 }
