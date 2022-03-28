@@ -11,6 +11,7 @@ withConfig' ++ (
     # coc-pyright
     # coc-spell-checker
     tokyonight-nvim
+    gruvbox
     # vim-css-color
     # vim-nix
     # vim-ripgrep
@@ -23,5 +24,6 @@ withConfig' ++ (
     cmp_luasnip
     luasnip
     telescope-nvim
+    cmp-path
   ]
 )
