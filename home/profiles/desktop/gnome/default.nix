@@ -35,5 +35,11 @@ in
     tela-icon-theme
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.clipboard-history
+    gnomeExtensions.caffeine
+    gnomeExtensions.focus-changer
+    gnomeExtensions.gtile
+    # gnomeExtensions.forge # I want this to not suck, but it really sucks (at least in nixos)
+    gnomeExtensions.vitals
   ];
 }

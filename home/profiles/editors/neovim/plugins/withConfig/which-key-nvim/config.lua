@@ -3,7 +3,7 @@ local wk = require("which-key")
 wk.setup ({})
 
 wk.register({
-  [" "] = { "<cmd>Telescope find_files<cr>", "Browse files" },
+  [" "] = { "<cmd>Telescope find_files hidden=true<cr>", "Browse files" },
   [":"] = { "<cmd>Telescope commands<cr>", "Browse commands" },
   ["/"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
   f = {
