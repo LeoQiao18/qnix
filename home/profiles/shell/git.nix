@@ -19,7 +19,8 @@ in
     userName = "LeoQiao18";
     extraConfig = gitConfig;
     ignores = [
-      "*.direnv"
+      ".envrc"
+      ".env"
     ];
   };
 }

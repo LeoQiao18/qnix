@@ -24,6 +24,8 @@ withConfig' ++ (
     cmp_luasnip
     luasnip
     telescope-nvim
+    telescope-file-browser-nvim
     cmp-path
+    fugitive
   ]
 )

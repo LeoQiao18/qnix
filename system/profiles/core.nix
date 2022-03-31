@@ -21,21 +21,24 @@ in
   users.mutableUsers = true;
 
   environment.systemPackages = with pkgs; [
-      binutils
-      coreutils
-      curl
-      firefox
-      git
-      manix
-      vim
-      wget
-    ];
+    binutils
+    coreutils
+    cachix
+    curl
+    firefox
+    git
+    manix
+    vim
+    wget
+  ];
 
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [
-      "JetBrainsMono"
-      "FiraCode"
-    ]; })
+    (nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+        "FiraCode"
+      ];
+    })
   ];
 
   # use zsh
@@ -46,8 +49,8 @@ in
     # Automate garbage collection
     gc = {
       automatic = true;
-      dates     = "weekly";
-      options   = "--delete-older-than 7d";
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
 
     # enable nix flake

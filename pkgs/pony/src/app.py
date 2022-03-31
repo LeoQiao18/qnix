@@ -1,7 +1,10 @@
-import click
-import subprocess
 import os
 from pathlib import Path
+import subprocess
+import click
+from . import cachix
+from . import dconf
+from . import flake
 
 QNIX_HOST = os.getenv('QNIX_HOST')
 QNIX_PATH = str(Path.home() / "qnix")
@@ -17,20 +20,12 @@ def pony_edit():
 
 @pony.command("switch")
 def pony_switch():
+    subprocess.run(["git", "add", "-A"])
     subprocess.run(["sudo", "nixos-rebuild", "switch", "--flake", f".#{QNIX_HOST}"])
 
-@pony.group("update")
-def pony_update():
-    pass
-
-@pony_update.command("flake")
-def pony_update_flake():
-    subprocess.run(["sudo", "nix", "flake", "update"])
-
-@pony_update.command("dconf")
-def pony_update_dconf():
-    os.chdir("./home/profiles/desktop/gnome")
-    subprocess.run(["./save-settings.sh"])
+cachix.setup(pony)
+dconf.setup(pony)
+flake.setup(pony)
 
 def main():
     if not QNIX_HOST:

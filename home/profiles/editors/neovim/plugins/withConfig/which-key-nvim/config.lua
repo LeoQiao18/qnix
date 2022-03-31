@@ -3,10 +3,13 @@ local wk = require("which-key")
 wk.setup ({})
 
 wk.register({
+  [" "] = { "<cmd>Telescope find_files<cr>", "Browse files" },
+  [":"] = { "<cmd>Telescope commands<cr>", "Browse commands" },
+  ["/"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
   f = {
     name = "file",
-    f = { "<cmd>Telescope find_files<cr>", "Find file" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Find recent" },
+    f = { "<cmd>Telescope file_browser<cr>", "File browser" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Browse recent files" },
     t = { "<cmd>NvimTreeToggle<cr>", "Toggle tree" },
     s = { "<cmd>w<cr>", "Save file" },
   },
@@ -34,11 +37,12 @@ wk.register({
     name = "buffer",
     p = { "<cmd>bp<cr>", "Previous buffer" },
     n = { "<cmd>bn<cr>", "Next buffer" },
+    q = { "<cmd>bd<cr>", "Kill buffer" },
   },
   q = {
     name = "editor",
-    q = { "<cmd>q<cr>", "Quit editor" },
-    r = { "<cmd>source $MYVIMRC", "Reload config" },
+    q = { "<cmd>qa<cr>", "Quit editor" },
+    r = { "<cmd>source $MYVIMRC<cr>", "Reload config" },
   },
   c = {
     name = "code",
@@ -56,15 +60,20 @@ wk.register({
     e = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Show error" },
     h = { "<cmd>lua vim.diagnostic.hide()<cr>", "Hide errors" },
     H = { "<cmd>lua vim.diagnostic.show()<cr>", "Unhide errors" },
-    l = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "List errors" },
+    l = { "<cmd>TroubleToggle<cr>", "List errors" },
     n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next error" },
     p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev error" },
+    t = { "<cmd>TodoTelescope<cr>", "Browse todos" },
   },
+  g = {
+    name = "git",
+    g = { "<cmd>Git<cr>", "Fugitive" },
+    s = { "<cmd>Telescope git_status", "Browse git status" },
+    b = { "<cmd>Telescope git_branches", "Browse git branches" },
+    l = { "<cmd>Telescope git_commits", "Browse git commits" },
+  },
+  p = {
+    name = "project",
+  },
+  r = { "<cmd>Telescope register<cr>", "Browse registers" },
 }, { prefix = "<leader>" })
-
-function qnix_toggle_diagnostic_hide()
-  local isHiding = false
-  if isHiding then
-    
-  end
-end
