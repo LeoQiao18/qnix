@@ -11,6 +11,6 @@ npairs.setup({
 })
 
 npairs.add_rules {
-  Rule("\\(", "\\)", { "markdown" }),
-  Rule("\\[", "\\]", { "markdown" }),
+  Rule("\\\\(", "\\\\)", { "markdown" }), -- pandoc math
+  Rule("\\\\[", "\\\\]", { "markdown" }),
 }
