@@ -131,6 +131,10 @@ with lib.hm.gvariant;
       minimize = [];
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,close";
+    };
+
     "org/gnome/epiphany/state" = {
       is-maximized = false;
       window-position = mkTuple [ (-1) (-1) ];
@@ -140,6 +144,20 @@ with lib.hm.gvariant;
     "org/gnome/evolution-data-server" = {
       migrated = true;
       network-monitor-gio-name = "";
+    };
+
+    "org/gnome/file-roller/listing" = {
+      list-mode = "as-folder";
+      name-column-width = 250;
+      show-path = false;
+      sort-method = "name";
+      sort-type = "ascending";
+    };
+
+    "org/gnome/file-roller/ui" = {
+      sidebar-width = 200;
+      window-height = 480;
+      window-width = 600;
     };
 
     "org/gnome/gedit/plugins" = {

@@ -35,6 +35,7 @@ wk.register({
   },
   b = {
     name = "buffer",
+    b = { "<cmd>Telescope buffers<cr>", "Browse buffer" },
     p = { "<cmd>bp<cr>", "Previous buffer" },
     n = { "<cmd>bn<cr>", "Next buffer" },
     q = { "<cmd>bd<cr>", "Kill buffer" },
