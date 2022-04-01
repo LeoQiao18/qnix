@@ -12,6 +12,7 @@ wk.register({
     r = { "<cmd>Telescope oldfiles<cr>", "Browse recent files" },
     t = { "<cmd>NvimTreeToggle<cr>", "Toggle tree" },
     s = { "<cmd>w<cr>", "Save file" },
+    S = { "<cmd>wa<cr>", "Save all" },
   },
   w = {
     name = "window",
