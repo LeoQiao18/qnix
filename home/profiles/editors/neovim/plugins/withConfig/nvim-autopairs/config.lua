@@ -9,8 +9,3 @@ npairs.setup({
     javascript = { "template_string" },
   },
 })
-
-npairs.add_rules {
-  Rule("\\\\(", "\\\\)", { "markdown" }), -- pandoc math
-  Rule("\\\\[", "\\\\]", { "markdown" }),
-}
