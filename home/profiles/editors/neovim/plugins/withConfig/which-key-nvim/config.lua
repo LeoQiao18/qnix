@@ -27,6 +27,7 @@ wk.register({
     s = { "<cmd>sp<cr>", "Split horizontal" },
     v = { "<cmd>vs<cr>", "Split vertical" },
     q = { "<cmd>wincmd q<cr>", "Quit window" },
+    z = { "<cmd>ZenMode<cr>", "Toggle zen mode" },
     ["+"] = { "<cmd>wincmd +<cr>", "Increase height" },
     ["-"] = { "<cmd>wincmd -<cr>", "Decrease height" },
     [">"] = { "<cmd>wincmd <<cr>", "Increase width" },
@@ -55,6 +56,7 @@ wk.register({
     n = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename symbol" },
     r = { "<cmd>lua vim.lsp.buf.references()<cr>", "List references" },
     t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Jump to type definition" },
+    w = { "<cmd>call ToggleWrap()<cr>", "Toggle wrap" },
   },
   e = {
     name = "error",
