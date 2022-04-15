@@ -1,1 +1,1 @@
-{ suites, ... }: { imports = suites.fullGnome; }
+{ suites, ... }: { imports = suites.pro-gnome; }

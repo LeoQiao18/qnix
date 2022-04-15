@@ -26,14 +26,14 @@
   darwin = [
     core
 
-    editors.neovim
+    #editors.neovim
 
-    dev
+    #dev
 
-    shell.core
-    shell.direnv
-    shell.git
-    shell.tmux
-    shell.zsh
+    #shell.core
+    #shell.direnv
+    #shell.git
+    #shell.tmux
+    ##shell.zsh
   ];
 }

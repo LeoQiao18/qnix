@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.dell-xps-13-9310
-  ] ++ suites.laptop-pro;
+  ] ++ suites.nixos-pro;
 
   environment.sessionVariables = {
     "QNIX_HOST" = "hiro";
