@@ -53,10 +53,12 @@ in
       options = "--delete-older-than 7d";
     };
 
-    # enable nix flake
+    # enable nix flake + protect nix-shell against GC
     package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
     '';
 
     # Required by Cachix to be used as non-root user
