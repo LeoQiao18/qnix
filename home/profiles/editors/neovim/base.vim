@@ -42,5 +42,8 @@ function ToggleWrap()
   endif
 endfunction
 
+" file types
+autocmd FileType text,markdown setlocal spell spelllang=en_us
+
 " clear highlight
 nnoremap <silent> <esc> :noh<return><esc>

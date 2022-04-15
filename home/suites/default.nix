@@ -1,6 +1,6 @@
 { core, apps, desktop, editors, dev, shell, ... }:
 {
-  fullGnome = [
+  pro-gnome = [
     core
 
     apps.chat
@@ -16,9 +16,24 @@
 
     dev
 
+    shell.core
     shell.direnv
     shell.git
     shell.zsh
     shell.tmux
+  ];
+
+  darwin = [
+    core
+
+    editors.neovim
+
+    dev
+
+    shell.core
+    shell.direnv
+    shell.git
+    shell.tmux
+    shell.zsh
   ];
 }

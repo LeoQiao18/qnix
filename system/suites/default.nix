@@ -1,14 +1,18 @@
 { core, users, hardware, x, ... }:
 {
-  laptop = [
+  nixos-pro = [
     core
 
     users.root
-    users.lqiao
+    users.lqiao-pro
 
     hardware.audio
 
     x.gnome
     x.xkbOptions
+  ];
+
+  darwin = [
+    users.lqiao-darwin
   ];
 }
