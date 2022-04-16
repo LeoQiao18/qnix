@@ -11,8 +11,4 @@
     x.gnome
     x.xkbOptions
   ];
-
-  darwin = [
-    users.lqiao-darwin
-  ];
 }

@@ -23,6 +23,8 @@ in
   environment.systemPackages = with pkgs; [
     binutils
     coreutils
+    usbutils
+    lsof
     cachix
     curl
     firefox
