@@ -24,6 +24,7 @@ in
     binutils
     coreutils
     usbutils
+    gnumake
     lsof
     cachix
     curl
