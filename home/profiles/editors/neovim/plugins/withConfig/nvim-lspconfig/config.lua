@@ -62,7 +62,9 @@ local servers = {
   'ocamllsp',
   'diagnosticls',
   'tsserver',
-  'sumneko_lua'
+  'sumneko_lua',
+  'gopls',
+  'ccls',
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {

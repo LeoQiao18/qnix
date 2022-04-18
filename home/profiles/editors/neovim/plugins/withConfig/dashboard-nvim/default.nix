@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  type = "viml";
+  type = "lua";
   plugin = pkgs.vimPlugins.dashboard-nvim;
-  config = builtins.readFile ./config.vim;
+  config = builtins.readFile ./config.lua;
 }

@@ -4,13 +4,16 @@ syntax on
 filetype on
 filetype plugin indent on
 colorscheme tokyonight
-set expandtab
-set shiftwidth=2
-set ignorecase
 set number relativenumber " hybrid line number
 set termguicolors
 set signcolumn=yes
 set mouse=a
+
+" searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 " wrapping
 set wrap linebreak nolist
@@ -42,7 +45,31 @@ function ToggleWrap()
   endif
 endfunction
 
+" file encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
+
+" shell
+if exists('$SHELL')
+    set shell=$SHELL
+else
+    set shell=/bin/sh
+endif
+
+" listchars
+set nolist
+set listchars=tab:>-,space:⋅,eol:↴
+
+" indentation
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
 " file types
+autocmd FileType go setlocal noexpandtab tabstop=8 shiftwidth=8
+autocmd FileType make,cmake setlocal noexpandtab tabstop=8 shiftwidth=8
 autocmd FileType text,markdown setlocal spell spelllang=en_us
 
 " clear highlight

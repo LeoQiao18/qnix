@@ -5,5 +5,7 @@
     gdb
     gnumake
     cmake
+    ccls
+    bear
   ];
 }
