@@ -1,14 +1,20 @@
 { core, users, hardware, x, ... }:
 {
-  nixos-pro = [
+  core = [
     core
-
     users.root
-    users.lqiao-pro
+  ];
 
-    hardware.audio
-
+  gnome = [
     x.gnome
     x.xkbOptions
+  ];
+
+  nvidia = [
+    hardware.nvidia
+  ];
+
+  lqiao-pro = [
+    users.lqiao-pro
   ];
 }

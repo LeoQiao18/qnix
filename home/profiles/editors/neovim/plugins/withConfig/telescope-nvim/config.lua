@@ -7,12 +7,6 @@ telescope.setup {
     layout_strategy = "vertical",
     file_ignore_patterns = {
       ".git",
-      "node_modules",
-      "__pycache__",
-      "%.o",
-      "%.a",
-      "%.out",
-      "%.class",
     },
   },
 }

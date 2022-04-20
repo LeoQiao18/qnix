@@ -3,14 +3,17 @@ local wk = require("which-key")
 wk.setup ({})
 
 wk.register({
-  [" "] = { "<cmd>Telescope find_files hidden=true<cr>", "Browse files" },
+  [" "] = { "<cmd>call ProjectFiles()<cr>", "Browse files" },
+  -- [" "] = { "<cmd>Telescope find_files hidden=true<cr>", "Browse files" },
+  -- [" "] = { [[<cmd>lua (function() local opts = {hidden=true} local ok = pcall(require"telescope.builtin".git_files, opts) if not ok then require"telescope.builtin".find_files(opts) end end)()<cr>]], "Project files" },
   [":"] = { "<cmd>Telescope commands<cr>", "Browse commands" },
   ["/"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
   f = {
     name = "file",
     a = { "<cmd>Telescope live_grep<cr>", "Find word" },
-    b = { "<cmd>Telescope marks<cr>", "Find bookmarks" },
-    f = { "<cmd>Telescope file_browser<cr>", "File browser" },
+    b = { "<cmd>Telescope file_browser hidden=true<cr>", "File browser" },
+    f = { "<cmd>Telescope find_files hidden=true<cr>", "Find file" },
+    M = { "<cmd>Telescope marks<cr>", "Find bookmarks" },
     n = { "<cmd>enew<cr>", "New file" },
     r = { "<cmd>Telescope oldfiles<cr>", "Browse recent files" },
     t = { "<cmd>NvimTreeToggle<cr>", "Toggle tree" },
@@ -79,10 +82,11 @@ wk.register({
   },
   g = {
     name = "git",
+    f = { "<cmd>Telescope git_files<cr>", "Find git files" },
     g = { "<cmd>Git<cr>", "Fugitive" },
-    s = { "<cmd>Telescope git_status", "Browse git status" },
-    b = { "<cmd>Telescope git_branches", "Browse git branches" },
-    l = { "<cmd>Telescope git_commits", "Browse git commits" },
+    s = { "<cmd>Telescope git_status<cr>", "Browse git status" },
+    b = { "<cmd>Telescope git_branches<cr>", "Browse git branches" },
+    l = { "<cmd>Telescope git_commits<cr>", "Browse git commits" },
   },
   p = {
     name = "project",
