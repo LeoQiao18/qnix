@@ -1,8 +1,9 @@
-{ core, users, hardware, x, ... }:
+{ core, users, hardware, x, cachix, ... }:
 {
   core = [
     core
     users.root
+    cachix
   ];
 
   gnome = [

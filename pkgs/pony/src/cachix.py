@@ -9,5 +9,5 @@ def setup(pony):
     @cachix.command("use")
     @click.argument("cache")
     def cachix_use(cache):
-        subprocess.run(["cachix", "use", cache, "-m" "nixos", "-d", "./system/profile/cachix"])
+        subprocess.run(["cachix", "use", cache, "-m" "nixos", "-d", "./system/profiles/cachix"])
 

@@ -7,6 +7,7 @@
   ]
   ++ suites.core
   ++ suites.gnome
+  ++ suites.nvidia
   ++ suites.lqiao-pro;
 
   environment.sessionVariables = {

@@ -60,7 +60,8 @@ endif
 
 " listchars
 set nolist
-set listchars=tab:>-,space:⋅,eol:↴
+" set listchars=tab:>-,space:⋅·•,eol:↴
+set listchars=tab:▸\ ,space:•,eol:↴
 
 " indentation
 set expandtab

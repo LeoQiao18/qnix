@@ -26,7 +26,6 @@ in
     usbutils
     gnumake
     lsof
-    cachix
     curl
     firefox
     git
