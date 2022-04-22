@@ -8,7 +8,7 @@
   ++ suites.core
   ++ suites.gnome
   ++ suites.nvidia
-  ++ suites.lqiao-pro;
+  ++ suites.lqiao-gnome-pro;
 
   environment.sessionVariables = {
     "QNIX_HOST" = "thelio";

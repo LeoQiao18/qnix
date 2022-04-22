@@ -1,7 +1,7 @@
 { hmUsers, ... }:
 {
   home-manager.users = {
-    lqiao = hmUsers.pro;
+    lqiao = hmUsers.gnome-pro;
   };
 
   users.users.lqiao = {

@@ -76,4 +76,12 @@ autocmd FileType text,markdown setlocal spell spelllang=en_us
 " clear highlight
 nnoremap <silent> <esc> :noh<return><esc>
 
-let ProjectFiles = luaeval('function() local opts = {hidden=true} local ok = pcall(require"telescope.builtin".git_files, opts) if not ok then require"telescope.builtin".find_files(opts) end end')
+let ProjectFiles = luaeval("
+  \ function()
+  \   local opts = {hidden=true}
+  \   local ok = pcall(require'telescope.builtin'.git_files, opts)
+  \   if not ok then
+  \     require'telescope.builtin'.find_files(opts)
+  \   end
+  \ end
+  \ ")

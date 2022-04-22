@@ -15,7 +15,11 @@
     hardware.nvidia
   ];
 
-  lqiao-pro = [
-    users.lqiao-pro
+  lqiao-gnome-pro = [
+    users.lqiao-gnome-pro
   ];
+
+  # audio = [
+  #   hardware.audio
+  # ];
 }

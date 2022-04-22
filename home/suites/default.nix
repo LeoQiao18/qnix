@@ -1,19 +1,15 @@
 { core, apps, desktop, editors, dev, shell, ... }:
 {
-  pro-gnome = [
+  core = [
     core
+  ];
 
-    apps.chat
-    apps.doc
-    apps.media
-    apps.term
-    apps.browser
-
+  gnome = [
     desktop.gnome
     desktop.wallpaper
+  ];
 
-    editors.neovim
-
+  dev = [
     dev
 
     shell.core
@@ -21,5 +17,15 @@
     shell.git
     shell.zsh
     shell.tmux
+
+    editors.neovim
+  ];
+
+  guiApps = [
+    apps.chat
+    apps.doc
+    apps.media
+    apps.term
+    apps.browser
   ];
 }
