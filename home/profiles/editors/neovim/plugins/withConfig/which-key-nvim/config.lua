@@ -32,7 +32,7 @@ wk.register({
     L = { "<cmd>wincmd L<cr>", "Move right" },
     s = { "<cmd>sp<cr>", "Split horizontal" },
     v = { "<cmd>vs<cr>", "Split vertical" },
-    q = { "<cmd>wincmd q<cr>", "Quit window" },
+    d = { "<cmd>wincmd q<cr>", "Delete window" },
     ["+"] = { "<cmd>wincmd +<cr>", "Increase height" },
     ["-"] = { "<cmd>wincmd -<cr>", "Decrease height" },
     [">"] = { "<cmd>wincmd <<cr>", "Increase width" },
@@ -45,7 +45,7 @@ wk.register({
     b = { "<cmd>Telescope buffers<cr>", "Browse buffer" },
     p = { "<cmd>bp<cr>", "Previous buffer" },
     n = { "<cmd>bn<cr>", "Next buffer" },
-    q = { "<cmd>bd<cr>", "Kill buffer" },
+    d = { "<cmd>bd<cr>", "Delete buffer" },
   },
   q = {
     name = "editor",
@@ -101,6 +101,7 @@ wk.register({
   t = {
     name = "tab",
     c = { "<cmd>tabnew<cr>", "Create tab" },
+    d = { "<cmd>tabclose<cr>", "Delete tab" },
     p = { "<cmd>tabp<cr>", "Previous tab" },
     n = { "<cmd>tabn<cr>", "Next tab" },
   },
