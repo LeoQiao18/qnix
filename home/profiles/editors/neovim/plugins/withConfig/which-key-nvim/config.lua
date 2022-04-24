@@ -97,5 +97,11 @@ wk.register({
     name = "session",
     s = { "<cmd>SessionSave<cr>", "Save session" },
     l = { "<cmd>SessionLoad<cr>", "Load session" },
-  }
+  },
+  t = {
+    name = "tab",
+    c = { "<cmd>tabnew<cr>", "Create tab" },
+    p = { "<cmd>tabp<cr>", "Previous tab" },
+    n = { "<cmd>tabn<cr>", "Next tab" },
+  },
 }, { prefix = "<leader>" })
