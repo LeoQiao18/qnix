@@ -7,6 +7,7 @@
   ]
   ++ suites.core
   ++ suites.gnome
+  ++ suites.printer
   ++ suites.lqiao-gnome-pro;
 
   environment.sessionVariables = {

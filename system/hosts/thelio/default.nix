@@ -7,6 +7,7 @@
   ]
   ++ suites.core
   ++ suites.gnome
+  ++ suites.printer
   ++ suites.nvidia
   ++ suites.lqiao-gnome-pro;
 

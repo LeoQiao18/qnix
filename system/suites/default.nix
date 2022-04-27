@@ -19,6 +19,10 @@
     users.lqiao-gnome-pro
   ];
 
+  printer = [
+    hardware.printer
+  ];
+
   # audio = [
   #   hardware.audio
   # ];
