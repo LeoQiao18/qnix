@@ -16,6 +16,10 @@ in
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod.enabled = "ibus";
+  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [
+    libpinyin
+  ];
 
   # allow changing password
   users.mutableUsers = true;
