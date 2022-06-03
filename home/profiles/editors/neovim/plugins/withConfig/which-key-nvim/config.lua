@@ -89,8 +89,33 @@ wk.register({
     l = { "<cmd>Telescope git_commits<cr>", "Browse git commits" },
   },
   p = {
-    name = "project",
-    p = { "<cmd>Telescope projects<cr>", "Browse projects" },
+    name = "proof",
+    s = { "<cmd>CoqStart<cr>", "CoqStart" },
+    q = { "<cmd>CoqStop<cr>", "CoqStop" },
+    j = { "<cmd>CoqNext<cr>", "CoqNext" },
+    k = { "<cmd>CoqUndo<cr>", "CoqUndo" },
+    l = { "<cmd>CoqToLine<cr>", "CoqToLine" },
+    t = { "<cmd>CoqToTop<cr>", "CoqToTop" },
+    G = { "<cmd>CoqJumpToEnd<cr>", "CoqJumpToEnd" },
+    e = { "<cmd>CoqJumpToError<cr>", "CoqJumpToError" },
+    d = { ":CoqGotoDef <C-r>=coqtail#util#getcurword()<cr><cr>", "CoqGotoDef" },
+
+    h = { ":Coq Check <C-r>=coqtail#util#getcurword()<cr><cr>", "CoqCheck" },
+    a = { ":Coq About <C-r>=coqtail#util#getcurword()<cr><cr>", "CoqAbout" },
+    p = { ":Coq Print <C-r>=coqtail#util#getcurword()<cr><cr>", "CoqPrint" },
+    f = { ":Coq Locate <C-r>=coqtail#util#getcurword()<cr><cr>", "CoqLocate" },
+    ['/'] = { ":Coq Search <C-r>=coqtail#util#getcurword()<cr><cr>", "CoqSearch" },
+
+    r = { "<cmd>CoqRestorePanels<cr>", "CoqRestorePanels" },
+    g = {
+      name = "GotoGoal",
+      g = { ":<C-U>execute v:count1 'CoqGotoGoal'<cr>", "GotoGoalStart" },
+      G = { ":<C-U>execute v:count1 'CoqGotoGoal!'<cr>", "GotoGoalEnd" },
+      n = { "<cmd>CoqGotoGoalNext<cr>", "GotoGoalNextStart" },
+      N = { "<cmd>CoqGotoGoalNext!<cr>", "GotoGoalNextEnd" },
+      p = { "<cmd>CoqGotoGoalPrev<cr>", "GotoGoalPrevStart" },
+      P = { "<cmd>CoqGotoGoalPrev!<cr>", "GotoGoalPrevEnd" },
+    },
   },
   r = { "<cmd>Telescope registers<cr>", "Browse registers" },
   s = {
@@ -105,4 +130,21 @@ wk.register({
     p = { "<cmd>tabp<cr>", "Previous tab" },
     n = { "<cmd>tabn<cr>", "Next tab" },
   },
-}, { prefix = "<leader>" })
+}, {
+  prefix = "<leader>",
+  mode = "n",
+})
+
+wk.register({
+  p = {
+    name = "proof",
+    h = { "<ESC>:Coq Check <C-r>=coqtail#util#getvisual()<cr><cr>", "CoqCheck" },
+    a = { "<ESC>:Coq About <C-r>=coqtail#util#getvisual()<cr><cr>", "CoqAbout" },
+    p = { "<ESC>:Coq Print <C-r>=coqtail#util#getvisual()<cr><cr>", "CoqPrint" },
+    f = { "<ESC>:Coq Locate <C-r>=coqtail#util#getvisual()<cr><cr>", "CoqLocate" },
+    ['/'] = { "<ESC>:Coq Search <C-r>=coqtail#util#getvisual()<cr><cr>", "CoqSearch" },
+  }
+}, {
+  prefix = "<leader>",
+  mode = "x",
+})
