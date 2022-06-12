@@ -36,6 +36,10 @@ with lib.hm.gvariant;
       show-battery-percentage = true;
     };
 
+    "org/gnome/desktop/peripherals/mouse" = {
+      speed = -0.75;
+    };
+
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;

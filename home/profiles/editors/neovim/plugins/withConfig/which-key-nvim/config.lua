@@ -148,3 +148,16 @@ wk.register({
   prefix = "<leader>",
   mode = "x",
 })
+
+wk.register({
+  ['p'] = {
+    name = "proof",
+    j = { "<cmd>CoqNext<cr>", "CoqNext" },
+    k = { "<cmd>CoqUndo<cr>", "CoqUndo" },
+    l = { "<cmd>CoqToLine<cr>", "CoqToLine" },
+    t = { "<cmd>CoqToTop<cr>", "CoqToTop" },
+  }
+}, {
+  prefix = "<C-space>",
+  mode = "i",
+})
