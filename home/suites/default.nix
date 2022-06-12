@@ -27,5 +27,6 @@
     apps.media
     apps.term
     apps.browser
+    apps.office
   ];
 }
